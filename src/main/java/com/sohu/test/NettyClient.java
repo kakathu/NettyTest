@@ -11,6 +11,9 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+
 
 /**
  * User: wujian (jianwu203076@sohu-inc.com)
@@ -40,5 +43,8 @@ public class NettyClient {
     public static void main(String[] args) throws Exception {
         int port = 8000;
         new NettyClient().connect(port, "127.0.0.1");
+        ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+        DataOutputStream out = new DataOutputStream(byteStream); // converts ints
+        
     }
 }
